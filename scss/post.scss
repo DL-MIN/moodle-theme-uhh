@@ -1,0 +1,111 @@
+/*!
+ * This file is part of Moodle.
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*!
+ * post.scss
+ *
+ * @package   theme_uhh
+ * @author    Lars Thoms <lars.thoms@uni-hamburg.de>
+ * @copyright 2020 Universität Hamburg
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* ====[ Styles ]================================================================================ */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: $page-max-width;
+    }
+}
+
+.navbar {
+    background-color: $navbar-light-bg-color !important;
+
+    .nav-link, .nav-link:hover, .nav-link:active, .nav-link:focus,
+    .dropdown-toggle, .dropdown-toggle:hover, .dropdown-toggle:active, .dropdown-toggle:focus,
+    .usermenu .login, .usermenu .login a, .usermenu .login a:hover, .usermenu .login a:active, .usermenu .login a:focus {
+        border: 0;
+        background-color: $nav-link-bg-color !important;
+        color: $nav-link-color;
+
+        .icon.fa-bars {
+            width: $nav-link-icon-size;
+            height: $nav-link-icon-size;
+            font-size: $nav-link-icon-size;
+        }
+    }
+
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link:active, .navbar-nav .nav-link:focus, a#dropdown-1 .userbutton, a#dropdown-1:after {
+        color: $nav-link-color;
+    }
+
+    .navbar-brand, .navbar-brand:hover, .navbar-brand:active, .navbar-brand:focus {
+        font-family: $font-family-caps;
+        font-weight: bold;
+        color: $navbar-brand-color;
+    }
+
+    img.userpicture {
+        margin-left: .5rem;
+        margin-right: 0;
+    }
+}
+
+.navbar-expand > .container, .navbar-expand > .container-fluid {
+    padding-right: inherit;
+    padding-left: inherit;
+}
+
+#nav-drawer {
+    right: 0;
+    left: auto;
+}
+
+#page {
+    max-width: $page-max-width;
+
+    h5 {
+        font-family: 'TheSansUHH-Caps', sans-serif;
+        font-size: 2.125rem;
+    }
+}
+
+#page-header {
+    img.logo {
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        border: none;
+    }
+}
+
+footer#page-footer {
+    background-color: $footer-bg-color !important;
+
+    .container > p {
+        margin-top: 1rem;
+    }
+}
+
+.pagelayout-login #region-main {
+    margin-top: 50px;
+}
+
+#region-maintenance p {
+    text-align: center;
+}

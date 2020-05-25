@@ -1,0 +1,71 @@
+/*!
+ * This file is part of Moodle.
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*!
+ * pre.scss
+ *
+ * @package   theme_uhh
+ * @author    Lars Thoms <lars.thoms@uni-hamburg.de>
+ * @copyright 2020 Universität Hamburg
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* ====[ Configurations ]======================================================================== */
+
+$navbar-light-color: #FFFFFF;
+$navbar-light-bg-color: #027BCB;
+$navbar-brand-color: #FFFFFF;
+$nav-link-color: #FFFFFF;
+$nav-link-bg-color: transparent;
+$nav-link-icon-size: 1.75rem;
+$font-family-base: "TheSansUHH";
+$font-family-caps: "TheSansUHH-Caps";
+$page-max-width: 80rem;
+$footer-bg-color: #3B515C;
+
+
+/* ====[ Mixins ]================================================================================ */
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff ttf) {
+    $src: null;
+
+    $formats: (eot: "embedded-opentype", otf: "opentype", ttf: "truetype");
+
+    @each $ext in $exts {
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $ext)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-weight: $weight;
+        font-style: $style;
+        src: $src;
+    }
+}
+
+
+/* ====[ Fonts ]================================================================================= */
+
+@include font-face("TheSansUHH", "[[font:theme|TheSansUHH-Regular]]", normal, normal, "eot" "woff2" "woff");
+@include font-face("TheSansUHH", "[[font:theme|TheSansUHH-Italic]]", normal, italic, "eot" "woff2" "woff");
+@include font-face("TheSansUHH", "[[font:theme|TheSansUHH-Bold]]", bold, normal, "eot" "woff2" "woff");
+@include font-face("TheSansUHH", "[[font:theme|TheSansUHH-BoldItalic]]", bold, italic, "eot" "woff2" "woff");
+
+@include font-face("TheSansUHH-Caps", "[[font:theme|TheSansUHH-Caps-Regular]]", normal, normal, "eot" "woff2" "woff");
+@include font-face("TheSansUHH-Caps", "[[font:theme|TheSansUHH-Caps-Lighter]]", 300, normal, "eot" "woff2" "woff");
+@include font-face("TheSansUHH-Caps", "[[font:theme|TheSansUHH-Caps-Bold]]", bold, normal, "eot" "woff2" "woff");
